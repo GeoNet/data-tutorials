@@ -1,4 +1,4 @@
-# Accessing Seismic Data in Python [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JenLowe/data_tutorials/master?filepath=Seismic_Data%2FPython)
+# Accessing Seismic Data in Python
 
 The files in this folders are Python notebooks that will demonstrate some simple ways to use the GeoNet FDSN webservices in Python and with the Python module, ObsPy. Please note these examples use Python 3, so the syntax may differ slightly to Python 2.7. We recommend you use Python 3 as it has some important bug fixes.
 
