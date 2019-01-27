@@ -1,4 +1,4 @@
-# Accessing Seismic Data in R [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/GeoNet/data-tutorials/master?filepath=Seismic_Data%2FR)
+# Accessing Seismic Data in R 
 The files in this folders are R notebooks that will demonstrate some simple ways to use the GeoNet FDSN webservices in R.
 
 |File                  | Description  | Output|
