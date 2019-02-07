@@ -8,6 +8,6 @@ The files in this folders are Jupyter notebooks that demonstrate simple ways to 
 
 | Data type  | Description   |
 | ------------- | ------------- |
-| [Seismic Data](Seismic_Data) | Tutorials demostrating how to get data throught the different FDSN web services (Dataselect, Station and Event). The Tutorials are presented in Jupyter notebooks written in Pyrhon and R Programming languages.|
+| [Seismic Data](Seismic_Data) | Tutorials demostrating how to get earthquake/seismic data throught the different FDSN web services (Dataselect, Station and Event). The Tutorials are presented in Jupyter notebooks written in Pyrhon and R Programming languages.|
 | [GNSS Data](GNSS_Data) | Tutorials that demonstrate how to retrieve and perform basic tasks with GNSS Data, mostly with the use of FITS API. The Tutorials are presented in Jupyter notebooks written in Python and R Programming languages.|
 | [Volcano Data](Volcano_Data) | Demostrative tutorials to access Volcano Data with the use of FITS API and FDSN Web services. The Tutorials are presented in Jupyter notebooks written in Python and R Programming languages.|
