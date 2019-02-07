@@ -9,4 +9,3 @@ The files in this folders are Python notebooks that will demonstrate some simple
 | [dataselect](GeoNet_FDSN_demo_dataselect.ipynb) | Examples of using the dataselect to request waveform data.  |<img src="day_plot.png">
 | [event](GeoNet_FDSN_demo_event.ipynb) | Examples of using the event service to get event information and parse QuakeML. |<img src ="event.png">
 | [station](GeoNet_FDSN_demo_station.ipynb) | Examples of using the station service to get station information and parse StationXML. | <img src="station.png">
-| [Tide Gauge](GeoNet_Tide_Gauge_Data.ipynb) | Demostrates how to get water level sensor data |<img src="tide.png">
