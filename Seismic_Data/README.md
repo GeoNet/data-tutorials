@@ -1,18 +1,18 @@
 # Seismic Data
 ## Accessing Seismic Data in R ## 
-R notebooks that will demonstrate some simple ways to use the GeoNet FDSN webservices in R.
+R notebooks that will demonstrate simple ways to use the GeoNet FDSN webservices in R.
 
 |File                  | Description  | Output|
 |--------------------- | ------|---------------------------------------|
-|[Overview](R/Seismic_data_overview_using_FDSN_in_R.ipynb) | In this tutorial we will look at the work flow from knowing the data of the Seismic Event we wish to look at to getting data on this Seismic Event. | |
-|[Event](R/Event_Data_using_FDSN_in_R.ipynb) |In this tutorial we find all the seismic events that happend in set time| <img src="R/event.png"> |
-|[Station](R/Station_Data_using_FDSN_in_R.ipynb) |In this notebook we will look at the station active in a set time frame in a set area.| <img src="R/station.png"> |
+|[Overview](R/Seismic_data_overview_using_FDSN_in_R.ipynb) | Demonstrates the work flow from knowing the data of the Seismic Event we wish to look at to getting data on this Seismic Event. | |
+|[Event](R/Event_Data_using_FDSN_in_R.ipynb) |In this tutorial we find all the seismic events that occurred in set time| <img src="R/event.png"> |
+|[Station](R/Station_Data_using_FDSN_in_R.ipynb) |In this notebook we will look at the stations active in a set time frame in a set area.| <img src="R/station.png"> |
 |[Waveform Data](R/Get_waveform_data_using_FDSN_in_R.ipynb)|In this tutorial we will get the wavefrom data from one station.|<img src="R/waveform.png">|
 
 
 
 ## Accessing Seismic Data in Python ## 
-Python notebooks will demonstrate some simple ways to use the GeoNet FDSN webservices in Python and with the Python module, ObsPy. Please note these examples use Python 3, so the syntax may differ slightly to Python 2.7. We recommend you use Python 3 as it has some important bug fixes.
+Python notebooks demonstrating simple ways to use the GeoNet FDSN webservices in Python and with the Python module, ObsPy. Please note these examples use Python 3, so the syntax may differ slightly to Python 2.7. We recommend you use Python 3 as it has some important bug fixes.
 
 | File | Description | Output |
 |------|-------------|--------|
