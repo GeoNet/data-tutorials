@@ -1,0 +1,15 @@
+name: GeoNet
+channels:
+  - conda-forge
+dependencies:
+  - cartopy
+  - numpy
+  - matplotlib<2.2
+  - pandas
+  - geopandas
+  - obspy
+  - cryptography
+  - proj4 
+  - pyproj 
+  - geos
+  - pillow
