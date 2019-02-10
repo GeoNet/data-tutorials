@@ -1,0 +1,81 @@
+,tyeID,name,unit,description
+1,e,east,mm,displacement from initial position
+2,n,north,mm,displacement from initial position
+3,u,up,mm,displacement from initial position
+4,e_rf,east regionally-filtered,mm,"displacement from initial position, regionally-filtered"
+5,n_rf,north regionally-filtered,mm,"displacement from initial position, regionally-filtered"
+6,u_rf,up regionally-filtered,mm,"displacement from initial position, regionally-filtered"
+7,mp1,average-mp1,m,RMS on L1 code multipath
+8,mp2,average-mp2,m,RMS on L2 code multipath
+9,t,temperature,C,temperature
+10,fr,flow rate,l/s,flow rate of fluid in a channel
+11,g,gravity,m/s/s,acceleration due to gravity
+12,ap,air pressure,hPa,air pressure
+13,fp,fluid pressure,hPa,fluid pressure
+14,vel,velocity,m/s,velocity of fluid or other object
+15,dir,direction,deg,flow direction of a fluid
+16,vol,voltage,V,power supply voltage
+17,tl,tilt,rad,angle of tilt relative to the horizontal
+18,rs,rsam,nm/s,10-minute mean ground velocity in a given frequency band
+19,ph,ph,-,degree of acidity or alkalinity of a sample
+20,Cl,chloride,mg/L,concentration in a sample
+21,Mg,magnesium,mg/L,concentration in a sample
+22,CO2-flux-e,Carbon Dioxide,g-m^2/d,Carbon Dioxide
+23,H2S-flux-e,Hydrogen Sulphide,g-m^2/d,Hydrogen Sulphide
+24,nve,volcanic earthquakes,n/d,number of volcanic earthquakes recorded per day
+25,nvte,volcanic-tectonic earthquakes,n/d,number of volcanic-tectonic earthquakes recorded per day
+26,SO2-flux-a,Sulphur Dioxide flux in air,kg/s,flux of sulphur dioxide measured in the air
+27,CO2-flux-a,Carbon Dioxide flux in air,kg/s,flux of carbon dioxide measured in the air
+28,H2S-flux-a,Hydrogen Sulphide flux in air,kg/s,flux of hydrogen sulphide measured in the air
+29,hum,humidity,%,amount of water vapour in atmosphere
+30,mwindir,mean wind direction,deg,mean wind direction over the sampling period
+31,mwindsp,mean wind speed,m/s,mean wind speed over the sampling period
+32,rain,rainfall,mm,rainfall over the sampling period
+33,solrad,solar radiation,W/m2,mean solar radiation over the sampling period
+34,HCO3-w,bicarbonate,mg/L,HCO3 concentration in a water sample
+35,Li-w,lithium,mg/L,Li concentration in a water sample
+36,Na-w,sodium,mg/L,Na concentration in a water sample
+37,K-w,potassium,mg/L,K concentration in a water sample
+38,Ca-w,calcium,mg/L,Ca concentration in a water sample
+39,SiO2-w,silicon dioxide,mg/L,SiO2 concentration in a water sample
+40,H2S-w,hydrogen sulphide,mg/L,H2S concentration in a water sample
+41,Fe-w,iron,mg/L,Fe concentration in a water sample
+42,Al-w,aluminium,mg/L,Al concentration in a water sample
+43,As-w,arsenic,mg/L,As concentration in a water sample
+44,Rb-w,rubidium,mg/L,Rb concentration in a water sample
+45,Cs-w,caesium,mg/L,Cs concentration in a water sample
+46,NH3-w,ammonia,mg/L,NH3 concentration in a water sample
+47,B-w,boron,mg/L,B concentration in a water sample
+48,F-w,flourine,mg/L,F concentration in a water sample
+49,Br-w,bromide,mg/L,Br concentration in a water sample
+50,NO3-N-w,nitrate as nitrogen,mg/L,NO3-N concentration in a water sample
+51,PO4-P-w,phosphate as as phosphorus,mg/L,PO4-P concentration in a water sample
+52,z,height,m,height
+53,SO4-w,sulphate,mg/L,SO4 concentration in a water sample
+54,d18O-w,ratio 18O:16O,per mil,"d18O concentration  in water, relative to standard"
+55,d2H-w,ratio 2H:1H,per mil,"d2H concentration in water, relative to standard"
+56,HCO3-g,bicarbonate,mg/L,HCO3 concentration in a gas sample
+57,Li-g,lithium,mg/L,Li concentration in a gas sample
+58,Na-g,sodium,mg/L,Na concentration in a gas sample
+59,K-g,potassium,mg/L,K concentration in a gas sample
+60,Ca-g,calcium,mg/L,Ca concentration in a gas sample
+61,SiO2-g,silicon dioxide,mg/L,SiO2 concentration in a gas sample
+62,H2S-g,hydrogen sulphide,mg/L,H2S concentration in a gas sample
+63,Fe-g,iron,mg/L,Fe concentration in a gas sample
+64,Al-g,aluminium,mg/L,Al concentration in a gas sample
+65,As-g,arsenic,mg/L,As concentration in a gas sample
+66,Rb-g,rubidium,mg/L,Rb concentration in a gas sample
+67,Cs-g,caesium,mg/L,Cs concentration in a gas sample
+68,NH3-g,ammonia,mg/L,NH3 concentration in a gas sample
+69,B-g,boron,mg/L,B concentration in a gas sample
+70,F-g,flourine,mg/L,F concentration in a gas sample
+71,Br-g,bromide,mg/L,Br concentration in a gas sample
+72,NO3-N-g,nitrate as nitrogen,mg/L,NO3-N concentration in a gas sample
+73,PO4-P-g,phosphate as as phosphorus,mg/L,PO4-P concentration in a gas sample
+74,SO4-g,sulphate,mg/L,SO4 concentration in a gas sample
+75,d18O-g,ratio 18O:16O,per mil,"d18O concentration in gas, relative to standard"
+76,d2H-g,ratio 2H:1H,per mil,"d2H concentration in gas, relative to standard"
+77,Mg-w,magnesium,mg/L,Mg concentration in a water sample
+78,Cl-w,chloride,mg/L,Cl concentration in a water sample
+79,Mg-g,magnesium,mg/L,Mg concentration in a gas sample
+80,Cl-g,chloride,mg/L,Cl concentration in a gas sample
