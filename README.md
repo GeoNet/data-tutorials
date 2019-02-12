@@ -43,6 +43,31 @@ This can be done on Windows, Mac, and Linux. The code for the Anaconda prompt wi
 
 **Open the Anaconda prompt and run each line of code below.**
 
+
+**Clone the git**
+
+`git clone https://github.com/GeoNet/data-tutorials.git`
+
+
+`cd data-tutorials`
+
+
+
+
+**Install all packages used**
+
+
+
+Install the environment file
+
+`conda env create -f environment.yml`
+
+
+Activate this environment 
+
+
+`activate GeoNet`
+
 Install Jupyter
 
 `conda install -c anaconda jupyter`
@@ -58,7 +83,6 @@ Install Python
 
 
 
-
 Install the R kernel
 
 
@@ -69,22 +93,6 @@ Install the Python kernel
 ` conda install -c conda-forge ipykernel`
 
 
-**Clone the git**
-
-`git clone https://github.com/GeoNet/data-tutorials.git`
-
-`cd data-tutorials`
-
-
-**Install all packages used**
-
-Install the environment file
-
-`conda env create -f environment.yml`
-
-Activate this environment 
-
-`activate GeoNet`
 
 Run the R script to install all R packages. 
 
@@ -97,6 +105,8 @@ Run the R script to install all R packages.
 `jupyter notebook`
 
 To reopen notebooks, open the Anaconda prompt and run 
+
+`cd data-tutorials`
 
 `activate GeoNet`
 
