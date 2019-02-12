@@ -1,7 +1,7 @@
 # Seismic Data 
 
 ## Accessing Seismic Data in R ## 
-R notebooks that will demonstrate some simple ways to use the GeoNet FDSN webservices in R.
+R notebooks that will demonstrate simple ways to use the GeoNet FDSN webservices in R.
 
 |File                  | Description  | Output|
 |--------------------- | ------|---------------------------------------|
@@ -11,9 +11,8 @@ R notebooks that will demonstrate some simple ways to use the GeoNet FDSN webser
 |[FDSN Dataselect service tutorial with R](R/Get_waveform_data_using_FDSN_in_R.ipynb)| Example of using the FDSN dataselect service to request waveform data in R programming language.|<img src="R/waveform.png">|
 
 
-
 ## Accessing Seismic Data in Python ## 
-Python notebooks will demonstrate some simple ways to use the GeoNet FDSN webservices in Python and with the Python module, ObsPy. Please note these examples use Python 3, so the syntax may differ slightly to Python 2.7. We recommend you use Python 3 as it has some important bug fixes.
+Python notebooks demonstrating simple ways to use the GeoNet FDSN webservices in Python and with the Python module, ObsPy. Please note these examples use Python 3, so the syntax may differ slightly to Python 2.7. We recommend you use Python 3 as it has some important bug fixes.
 
 | File | Description | Output |
 |------|-------------|--------|
