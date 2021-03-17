@@ -71,7 +71,7 @@ Install the environment file
 Activate this environment 
 
 
-`activate GeoNet`
+`conda activate GeoNet`
 
 Install Jupyter
 
@@ -113,7 +113,7 @@ To reopen notebooks, open the Anaconda prompt and run
 
 `cd data-tutorials`
 
-`activate GeoNet`
+`conda activate GeoNet`
 
 `jupyter notebook`
 
