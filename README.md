@@ -20,13 +20,13 @@ There are 3 files in this GitHub repository to help run these tutorials.
 - [**install.R**](install.R) is R code for installing all R packages used in these tutorials
 - [**runtime.txt**](runtime.txt) This file is for binder. Every day there is a snapshot of R taken. This install the snapshot of R taken on the date in this file. 
 
-### 1. In Anaconda
-Install anaconda https://www.anaconda.com/distribution/ 
-This can be done on Windows, Mac, and Linux. The code for the Anaconda prompt will be the same on all operating systems
+### 1. In Conda
+Install miniforge https://github.com/conda-forge/miniforge
+This can be done on Windows, Mac, and Linux. The code for the conda prompt will be the same on all operating systems
 
-**Open the Anaconda prompt and run each line of code below.**
+**Open the Conda prompt and run each line of code below.**
 
-
+`conda activate base`
 
 **Clone the git**
 
@@ -54,7 +54,7 @@ Activate this environment
 
 Install Jupyter
 
-`conda install -c anaconda jupyter`
+`conda install -c conda-forge jupyter`
 
 Install R
 
@@ -63,7 +63,7 @@ Install R
 
 Install Python 
 
-`conda install -c conda-forge python=3.6`
+`conda install -c conda-forge python=3.7`
 
 
 
@@ -74,7 +74,7 @@ Install the R kernel
 
 Install the Python kernel
 
-` conda install -c conda-forge ipykernel`
+`conda install -c conda-forge ipykernel`
 
 
 
@@ -88,7 +88,7 @@ Run the R script to install all R packages.
 
 `jupyter notebook`
 
-To reopen notebooks, open the Anaconda prompt and run 
+To reopen notebooks, open the conda prompt and run 
 
 `cd data-tutorials`
 
