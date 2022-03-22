@@ -20,63 +20,34 @@ There are 3 files in this GitHub repository to help run these tutorials.
 - [**install.R**](install.R) is R code for installing all R packages used in these tutorials
 - [**runtime.txt**](runtime.txt) This file is for binder. Every day there is a snapshot of R taken. This install the snapshot of R taken on the date in this file. 
 
-### 1. In Conda
-Install miniforge https://github.com/conda-forge/miniforge
-This can be done on Windows, Mac, and Linux. The code for the conda prompt will be the same on all operating systems
+### 1. Install miniforge.
+Install miniforge through this link https://github.com/conda-forge/miniforge for your specific operating system. This can be done on Windows, Mac, and Linux. Once installed, activate the `base` environment by running `conda activate base`, from here is it also best practice to run the following lines: 
 
-**Open the Conda prompt and run each line of code below.**
+`conda config --set channel_priority strict`
 
-`conda activate base`
+`conda config --set auto_activate_base false`
 
-**Clone the git**
+By setting a strict channel priority, this can often speed up conda operations and reduce package incompatibility problems and is often recommended as a default. By setting auto activate base to false, this means that whenever you open a command prompt, conda won't be automatically activated.
+
+**Next we want to clone the git data-tutorials repository**
 
 `git clone https://github.com/GeoNet/data-tutorials.git`
 
-
 `cd data-tutorials`
 
-
-
-
-**Install all packages used**
-
-
-
-Install the environment file
+**Install the environment file**
 
 `conda env create -f environment.yml`
 
-
-Activate this environment 
-
+And then activate this environment 
 
 `conda activate GeoNet`
 
-Install Jupyter
+**Install the following packages if using R**
 
-`conda install -c conda-forge jupyter`
-
-Install R
-
-
-` conda install -c conda-forge r-base`
-
-Install Python 
-
-`conda install -c conda-forge python=3.7`
-
-
-
-Install the R kernel
-
+`conda install -c conda-forge r-base`
 
 `conda install -c conda-forge  r-irkernel`
-
-Install the Python kernel
-
-`conda install -c conda-forge ipykernel`
-
-
 
 Run the R script to install all R packages. 
 
@@ -88,13 +59,21 @@ Run the R script to install all R packages.
 
 `jupyter notebook`
 
-To reopen notebooks, open the conda prompt and run 
+To reopen jupyter notebooks when opening a new command prompt, navigate to your working directory and run,
 
-`cd data-tutorials`
+`conda activate base`
 
 `conda activate GeoNet`
 
 `jupyter notebook`
+
+**Closing notebooks and environments**
+
+Close the web browser and then CTRL-C in terminal, and type 'y' when asked to confirm if you'd like to close the notebook. Then run:
+
+`conda deactivate` To close the 'GeoNet' environment
+
+`conda deactivate` To close the 'base' environment
 
 ### 2. In your preferred GUI (Graphical User Interface)
 If you wish to run just the code and not the notebooks you can use your own GUI for Python or R
