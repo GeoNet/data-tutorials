@@ -10,5 +10,5 @@ dependencies:
   - pandas
   - geopandas
   - obspy>=1.2
-  - jupyter  
+  - jupyterlab  
   - tabulate
