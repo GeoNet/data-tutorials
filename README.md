@@ -43,6 +43,10 @@ And then activate this environment
 
 `conda activate GeoNet`
 
+**Install the Python kernel**
+
+`conda install -c conda-forge ipykernel`
+
 **Install the following packages if using R**
 
 `conda install -c conda-forge r-base`
