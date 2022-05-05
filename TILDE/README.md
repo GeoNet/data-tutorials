@@ -1,7 +1,7 @@
 # TILDE 
 
 ## Accessing the TILDE API using Python ## 
-Python notebooks demonstrating ways to use the TILDE API. Currently the only domains available are DART (Deep-ocean Assessment and Reporting on Tsunamis) and Envirosensors, when more domains are added this file will be updated.
+Python notebooks demonstrating ways to use the TILDE API. Currently the only domains available are DART (Deep-ocean Assessment and Reporting on Tsunamis) and Envirosensors, when more domains are added this file will be updated. These files have all been updated (May 2022) to now use version 2 of the TILDE API. You can check the differences between version 1 and version 2 in the API documentation (https://tilde.geonet.org.nz/v1/api-docs/ and https://tilde.geonet.org.nz/v2/api-docs/). The main changes is that version 2 introduces "aspect" and for DART the method has been renamed (from UTZ to 15s and WTZ to 15m). 
 
 | File | Description | Output |
 |------|-------------|--------|
