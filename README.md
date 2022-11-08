@@ -24,6 +24,7 @@ There are 3 files in this GitHub repository to help run these tutorials.
 Install miniforge through this link https://github.com/conda-forge/miniforge for your specific operating system. This can be done on Windows, Mac, and Linux. Once installed, activate the `base` environment by running `conda activate base`, from here is it also best practice to run the following lines: 
 
 `conda config --set channel_priority strict`
+`mamba config --set channel_priority strict`
 
 `conda config --set auto_activate_base false`
 
