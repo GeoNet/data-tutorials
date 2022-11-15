@@ -12,5 +12,5 @@ Python notebooks demonstrating ways to use the Tilde API. Currently the only dom
 | [Envirosensor Data TILDE Endpoint](Envirosensor/TILDE_endpoint02-data_envirosensor.ipynb) | Demonstrates how to plot Envirosensor datapoints for minimum, maximum, snapshot and aggregated data.|<img src="Envirosensor/Envirosensor_Fumerole_Temp-endpoint02.png">
 |[Envirosensor Statistics TILDE Endpoint](Envirosensor/TILDE_endpoint03-stats_envirosensor.ipynb) | Demonstrates how to get different statistics from the Envirosensor data set.|<img src="Envirosensor/Envirosensor_Air_Temperature_Range-endpoint03.png">
 
-## Accessing the Tilde API using Python ##
+## Accessing the Tilde API using Bash ##
 A markdown file also shows a few examples of how to access the Tilde API using bash scripting. This can be found here: [Bash Tutorial](Bash_Tilde_Access.md).
