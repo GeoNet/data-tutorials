@@ -21,7 +21,7 @@ There are 3 files in this GitHub repository to help run these tutorials.
 - [**runtime.txt**](runtime.txt) This file is for binder. Every day there is a snapshot of R taken. This install the snapshot of R taken on the date in this file. 
 
 ### 1. Install miniforge.
-Install miniforge through this link https://github.com/conda-forge/miniforge for your specific operating system. This can be done on Windows, Mac, and Linux. [`mamba`](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) can also be used instead of `conda` and can be installed through conda. If using `mamba`, simply replace the word `conda` in the lines below (apart from activations and deactivations e.g. still need `conda activate base` etc). Once installed, activate the `base` environment by running `conda activate base`, from here is it also best practice to run the following lines: 
+Install miniforge through this link https://github.com/conda-forge/miniforge for your specific operating system. This can be done on Windows, Mac, and Linux. [`mamba`](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) can also be used instead of `conda` and can be installed through conda. Once installed, activate the `base` environment by running `conda activate base`, from here is it also best practice to run the following lines: 
 
 `conda config --set channel_priority strict`
 
