@@ -8,6 +8,7 @@ The dataset currently provides:
 - [GNSS data](#gnss)
 - [Seismic data products](#seismoprod)
 - [Digital waveform data](#waveform)
+- [Time Series data](#tseries)
 
 We are planning to add further data types in the future.
 
@@ -272,3 +273,86 @@ Data are organized by equipment type and date and objects' prefixes are formed a
   - `SN` is the instrument serial number
   - `ext` is the file extension and format `[evt|csd|xml|csv.gz]`
   
+
+
+## <a name="tseries"></a>Time Series data
+
+Time series data derived from the GeoNet sensor network. 
+
+Data are provided in commonly used text open file format and include:
+
+- [Tilde time series data](#tilde)
+
+Additional information around this dataset can be found on the [GeoNet website](https://www.geonet.org.nz/).
+
+All time series data are available under the bucket and prefix `s3://geonet-open-data/time-series/`.
+
+### <a name="tilde"></a>Tilde Time Series data
+Time series data derived from GeoNet sensor network, repackaged and formatted via the GeoNet Tilde application.
+
+Details on Tilde data name format can be found on the [GeoNet Tilde API website page](https://tilde.geonet.org.nz/).
+Details on available datasets can be found on the [GeoNet Tilde Data Discovery website page](https://tilde.geonet.org.nz/ui/data-exploration).
+
+This dataset is the same one that can be obtained from the Tilde API _data_ endpoint. For large data requests and bulk downloads, users are recommended to download data from this AWS Open Data bucket.
+
+Data are provided in gzip compressed csv (Comma Separated Values) format.
+
+All time series data are available under the bucket and prefix `s3://geonet-open-data/time-series/tilde/`.
+
+prefix | content
+-- | --
+`time-series/tilde/` | Tilde time series data
+
+The Tilde application was recently released in 2021, so the format of this dataset might change in the future. To allow our users to migrate their downstream procedures, object prefixes will include versioning. 
+
+For this dataset, object prefixes are following an _hive style_ partitioning. 
+
+Data are organized by version, domain, station, time series name, sensor code, time series parameters (method and aspect) and time. 
+
+Objects' prefixes are formed as:
+```
+time-series/tilde/[v]/domain=[domainkey]/                         \
+ station=[stationkey]/name=[namekey]/sensorcode=[sensorcodekey]/  \
+ method=[methodkey]/aspect=[aspectkey]/start=[YYYY-MM-DD]/        \
+ [domainkey].[stationkey].[namekey].[sensorcodekey].[methodkey].[aspectkey].[unit].[errorunit].[YYYY-MM-DD]T00:00:00Z.csv.gz
+```
+
+where:
+ - `v` is the tilde time series archive version number (currently v1)
+ - `domainkey` is the domain name, used to describe the type of sensor recording the time series
+ - `stationkey` is the station identifier
+ - `namekey` is the time series name, used to describe the type of measurement
+ - `sensorcodekey` is the sensor code, used when there are multiple sensors at the same station
+ - `methodkey` is the collection method or sampling rate
+ - `aspectkey` is the time series aspect, used to describe different features of the time series derived with the same method
+ - `YYYY-MM-DD` is first value for the windowed time series (year, month, day)
+ - `unit` is the unit used for time series values
+ - `errorunit` is the unit used for time series errors
+
+
+Below some examples of possible key values.
+
+key | values
+-- | --
+`v` | v1
+`domainkey` | `[coastal/dart/envirosensor]`
+`stationkey` | 3 to 5 alphanumeric characters
+`namekey` | `[water-height/water-heigh-detided/soil-moisture/...]`; currently up to 24 different name keys
+`sensorcodekey` | 2 or 3 digits 
+`methodkey` | `[15m/15s/avg/max/min/raw/snapshot/tot]` currently
+`aspectkey` | `[10-cm/x-axis/at-source/east-vent/...]` or `nil`; currently up to 28 different aspect keys
+`YYYY-MM-DD` | 4 digits year, 2 digits month, 2 digits day of month
+`unit` | `[deg/degC/hPa/m/mm/mps/mV/percent]`
+`errorunit` | `[deg/degC/hPa/m/mm/mps/mV/percent]` 
+
+The values listed above are combined depending on the name of the time series.
+For example, the `water-height` and `soil-moisture` time series, will only have these combinations available:
+
+name | domain | method | aspect | unit
+-----|--------|--------|--------|-----
+water-height | coastal/dart | 15m/15s/raw | nil | m
+soil-moisture | envirosensor | snapshot | 10-cm/20-cm/30-cm/40-cm/50-cm/60-cm/70-cm/80-cm | percent
+
+We are increasing the number of derived time series distributed via Tilde, so the list below will grow in time. 
+
+We recommend to refer to the [Tilde Data Discovery page](https://tilde.geonet.org.nz/ui/data-exploration) for an up-to-date and quick overview of available datasets and possible prefix combinations.
