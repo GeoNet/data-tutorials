@@ -2,7 +2,7 @@
 
 The purpose of this repository is to provide a home for several Data tutorials written to improve the accesibility of the different GeoNet's data sets. This repository provides an easy way to access the tutorials, versioning and allows the users to suggest changes or improvements.
 
-The files in these folders are [Jupyter notebooks](https://jupyter.org/) that will demonstrate some simple ways to retrieve data from different services such as: FDSN, FITS, TILDE, etc. in Python and R programming languages. 
+The files in these folders are [Jupyter notebooks](https://jupyter.org/) that will demonstrate some simple ways to retrieve data from different services such as: FDSN, FITS, Tilde, etc. in Python and R programming languages. 
 
 ## Summary of Tutorials
 
@@ -11,7 +11,7 @@ The files in these folders are [Jupyter notebooks](https://jupyter.org/) that wi
 | [GNSS Data](GNSS_Data) | Demostrative tutorials to retrieve and perform basics task with GNSS Data, mostly with the use of FITS API. The Tutorials are presented in Jupyter notebooks written in Python and R Programming languages.|
 | [Seismic Data](Seismic_Data) | Demostrative tutorials showing how to get data through the different FDSN web services (Dataselect, Station and Event). The Tutorials are presented in Jupyter notebooks written in Python and R Programming languages.|
 | [Tide Gauge Data](Tide_Gauge_Data) | Demonstrative tutorials to get water level sensor data. The Tutorials are presented in Jupyter notebooks written in Python.|
-| [TILDE](TILDE) | Demonstrative tutorials showing how to get DART and envirosensor data through the TILDE API. The Tutorials are presented in Jupyter notebooks written in Python.|
+| [Tilde](Tilde) | Demonstrative tutorials showing how to get DART and envirosensor data through the Tilde API. The Tutorials are presented in Jupyter notebooks written in Python.|
 | [Volcano Data](Volcano_Data) | Demostrative tutorials to access Volcano Data with the use of FITS API and FDSN Web services. The Tutorials are presented in Jupyter notebooks written in Python and R Programming languages.|
 
 ## How to Run Tutorials
