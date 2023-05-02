@@ -1,14 +1,13 @@
 name: GeoNet
 channels:
   - conda-forge
-  - defaults
 dependencies:
-  - python=3.7
+  - python=3.10
   - cartopy
   - numpy
-  - matplotlib>=3.3
+  - matplotlib[version='>=3.6']
   - pandas
   - geopandas
-  - obspy>=1.2
-  - jupyterlab  
+  - obspy=1.4  
   - tabulate
+  - ipykernel

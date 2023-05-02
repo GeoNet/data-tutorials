@@ -1,8 +1,14 @@
 # GeoNet Data distributed via AWS Open Data Program
 
-This dataset provides data recorded by the [GeoNet](https://www.geonet.org.nz) sensor network, a geophysical network used to monitor earthquakes, volcanoes, tsunami and landslides in New Zealand.
-The sensor network is made up of different types of equipment, and raw data are collected and made available for scientific research and geohazards monitoring. 
-The dataset currently provides:
+## <a name="introduction"></a>Introduction
+A copy of much of GeoNet's raw data is held by [Amazon Web Services (AWS) Open Data Program](https://registry.opendata.aws/geonet/).
+
+This document provides examples of simple commands to access GeoNet data through the AWS Open Data Program. It also summarises each of the data sets and how they are structured.
+
+### Data sets
+The [GeoNet](https://www.geonet.org.nz) sensor network is a geophysical network used to monitor earthquakes, volcanoes, tsunami, and landslides in New Zealand.
+The sensor network is made up of different types of equipments, and raw data are collected and made available for scientific research and geohazards monitoring.
+The AWS Open Data dataset currently provides:
 - [Camera images](#camera)
 - [Coastal gauge data](#coastal)
 - [GNSS data](#gnss)
@@ -10,9 +16,41 @@ The dataset currently provides:
 - [Digital waveform data](#waveform)
 - [Time Series data](#tseries)
 
-We are planning to add further data types in the future.
+With plans to add further data types in the future.
 
-## <a name="camera"></a>Camera images
+## Data access commands
+The simplest way to access data from GeoNet's AWS Open Data storage is to use the [AWS command line interface (CLI)](https://aws.amazon.com/cli/). There are [install instructions](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) for the CLI for the three common operating systems.
+
+### A. To list the top level data "folders"
+
+`aws s3 --no-sign-request ls s3://geonet-open-data/`
+- `aws s3` says we want to issue a aws command that acts on S3 bucket storage
+- `--no-sign-request` is required as users do not need to sign in to access AWS Open Data
+- `ls` says list the files and directories
+- `s3://geonet-open-data/` identifies to GeoNet's data in AWS Open Data
+Producing the following output:
+```
+PRE camera/
+PRE coastal/
+PRE gnss/
+PRE seismic-products/
+PRE time-series/
+PRE waveforms/
+```
+
+### B. Download data "folders"
+This command uses AWS CLI's `sync` command to "download" a month's worth of data from one "folder".
+`aws s3 --no-sign-request sync s3://geonet-open-data/time-series/tilde/v3/domain=coastal/station=AUCT/name=water-height/sensorcode=40/method=15s/aspect=nil/start=2023-01-01/ scratch`
+- `aws s3` says we want to issue a aws command that acts on S3 bucket storage
+- `--no-sign-request` is required as users do not need to sign in to access AWS Open Data
+- `sync` says synchronise the folder, effectively this copies it to your local computer
+- `s3://geonet-open-data/` identifies to GeoNet's data in AWS Open Data
+- `time-series/tilde/v3/domain=coastal/station=AUCT/name=water-height/sensorcode=40/method=15s/aspect=nil/start=2023-01-01/` identifies the resources (folder) to synchronise
+- `scratch` is where to store the folder on your local computer
+There will be no error messages, but no output will be written to the terminal. A file `coastal.AUCT.water-height.40.15s.nil.m.m.2023-01-01T00:00:00Z.csv.gz` will be generated.
+
+## Data description ##
+### <a name="camera"></a>Camera images
 Camera images recorded at webcams installed to monitor active New Zealand volcanoes. The dataset also include data from three webcams that documented the Christchurch rebuild from 2011 to 2019.
 
 Camera data include images in jpg format.
@@ -36,8 +74,8 @@ Data are organized by site code and date, and objects' prefixes are formed as:
   - `SITE` is the camera station 4 character code, upper case
   - `VC` is camera view code (two digits)
 
-## <a name="coastal"></a>Coastal gauge data
-Relative coastal sea level data measured by tsunami monitoring gauges around New Zealand coastlines. Data are in Character form for the Representation and EXchange of meteorological data (CREX) format. The network is operated in partnership with [LINZ](http://linz.govt.nz). 
+### <a name="coastal"></a>Coastal gauge data
+Relative coastal sea level data measured by tsunami monitoring gauges around New Zealand coastlines. Data are in Character form for the Representation and EXchange of meteorological data (CREX) format. The network is operated in partnership with [LINZ](http://linz.govt.nz).
 
 Coastal data include two sets of daily files containing measurements and quality control data.
 
@@ -51,7 +89,7 @@ prefix | content
 
 Data are organized by date, and objects' prefixes are formed as:
 
-  `coastal/crex/[yyyy]/[yyyy].[doy]/[SITE].TG/[yyyy].[doy].[SITE].[40|41]-CRX.TG.[ext]`, where: 
+  `coastal/crex/[yyyy]/[yyyy].[doy]/[SITE].TG/[yyyy].[doy].[SITE].[40|41]-CRX.TG.[ext]`, where:
   - `yyyy` is year (four digits)
   - `doy` is day of year (three digits)
   - `SITE` is the Tsunami gauge station 4 character code, upper case
@@ -60,7 +98,7 @@ Data are organized by date, and objects' prefixes are formed as:
 
 Please use the following Digital Object Identifiers https://doi.org/10.21420/4RAS-J272 when using coastal gauge data.
 
-## <a name="gnss"></a>GNSS data
+### <a name="gnss"></a>GNSS data
 Global Navigation Satellite System data recorded by the [New Zealand continuous GNSS ground network](https://www.geonet.org.nz/data/gnss/map) made by the GeoNet and [PositioNZ](http://linz.govt.nz) GNSS networks, with contribution from [Otago University](http://www.otago.ac.nz/surveying) and [NIWA](https://www.niwa.co.nz/).
 GNSS data include:
 - [raw data in RINEX format](#gnssrinex)
@@ -75,7 +113,7 @@ All GNSS data are available under the bucket and prefix `s3://geonet-open-data/g
 
 Please use the following Digital Object Identifiers https://doi.org/10.21420/RXKE-AZ44 when using GNSS data.
 
-### <a name="gnssrinex"></a>Raw data in RINEX format
+#### <a name="gnssrinex"></a>Raw data in RINEX format
 The primary dataset of this collection is made by raw data in Receiver INdependent EXchange format (RINEX).
 
 RINEX data are provided in version 2.11 and available as:
@@ -87,7 +125,7 @@ prefix | content
 `gnss/rinex1Hz/` | 15 minutes long, 1 second sampled uncompressed RINEX (for the last 2 months and 20% of the stations)
 
 - 30 second sampled data are organized by date, and object prefix are formed as:
-  `gnss/[rinex|rinexhourly]/yyyy/doy/[site][doy][0|a-x].[yy]o.gz`, where: 
+  `gnss/[rinex|rinexhourly]/yyyy/doy/[site][doy][0|a-x].[yy]o.gz`, where:
   - `yyyy` is year (four digits)
   - `doy` is day of year (three digits)
   - `site` is the GNSS station 4 character code, lower case
@@ -95,7 +133,7 @@ prefix | content
   - `yy` is last two digits of the year
 
 - 1 second sampled, 15 minutes long data are organized by date, and objects' prefix are formed as:
-  `gnss/rinex1Hz/yyyy/doy/[SITE][doy][A-X][MM].[yy]O`, where: 
+  `gnss/rinex1Hz/yyyy/doy/[SITE][doy][A-X][MM].[yy]O`, where:
   - `yyyy` is year (four digits)
   - `doy` is day of year (three digits)
   - `SITE` is the GNSS station 4 character code, upper case
@@ -105,7 +143,9 @@ prefix | content
 
 `*`: For example, `[A-X]` and `MM` combined are used to indicate: `A00` for `00:00:00 to 00:14:59`, `B15` for `01:15:00 to 01:29:59`, and so on.
 
-### <a name="gnssraw"></a>Raw data in proprietary format
+Please use the following Digital Object Identifier https://doi.org/10.21420/RXKE-AZ44 when using GNSS RINEX Data Products.
+
+#### <a name="gnssraw"></a>Raw data in proprietary format
 GNSS raw data in proprietary format are available as hourly files, at 30 second sampling rate.
 
 prefix | content
@@ -114,7 +154,7 @@ prefix | content
 
 Data are organized by date, and objects' prefixes are formed as:
 
-  `gnss/raw/yyyy/doy/[SITE][YYYY][mm][dd][HH][MM]a.ext`, where: 
+  `gnss/raw/yyyy/doy/[SITE][YYYY][mm][dd][HH][MM]a.ext`, where:
   - `yyyy` is year (four digits)
   - `doy` is day of year (three digits)
   - `SITE` is the GNSS station 4 character code, upper case
@@ -125,9 +165,11 @@ Data are organized by date, and objects' prefixes are formed as:
   - `a` is an internal convention used to indicate 30s sampling rate of the data
   - `ext` is the file extension, and indicate the proprietary format and GNSS receiver manufacturer. For most recent data (2019 onward) the extension is `T02`, older dataset will have different extension based on GNSS receiver manufacturer.
 
-This dataset contain the same GNSS data available in [RINEX](#gnssrinex) format. The exception is for a subset of stations for which, from January 2019 onward, additional GNSS constellations that are not available in the current RINEX format can be derived by converting the proprietary raw format. 
+This dataset contains the same GNSS data available in [RINEX](#gnssrinex) format. The exception is for a subset of stations for which, from January 2019 onward, additional GNSS constellations that are not available in the current RINEX format can be derived by converting the proprietary raw format.
 
-### <a name="gnssevent"></a>High rate GNSS data for significant geohazard events
+Please use the following Digital Object Identifier https://doi.org/10.21420/TMHV-0T46 when using GNSS Raw Data Products.
+
+#### <a name="gnssevent"></a>High rate GNSS data for significant geohazard events
 High rate (1 second and 0.1 second sampling rate) retrieved for major geologic events, starting from 2013. Please refer to the [GeoNet website](https://www.geonet.org.nz/data/supplementary/gnss_high_rate_data_access) for additional details, disclaimer and a list of events.
 
 Data are available under the prefix `gnss/event.highrate` and organized as follow:
@@ -142,8 +184,9 @@ prefix | content
 Same naming convention used in [RINEX](#gnssrinex) and [raw](#gnssraw) is used at subsequent levels.
   `gnss/event.highrate/[1hz|10hz]/[raw|rinex]/yyyy/doy/[rawfilename|rinexfilename]`
 
+Please use the following Digital Object Identifier https://doi.org/10.21420/NQYC-EG34 when using GNSS High Rate Event Products.
 
-### <a name="gnssmeta"></a>GNSS station metadata
+#### <a name="gnssmeta"></a>GNSS station metadata
 Sensor and station metadata of GNSS stations.
 The following formats are available:
 
@@ -151,7 +194,7 @@ prefix | content
 -- | --
 `gnss/sitelogs/logs/` | individual station sitelogs, International GNSS Service text format
 `gnss/sitelogs/xml/` | individual station sitelogs, XML (Sopac2004) format
-`gnss/sitelogs/station.info.geonet` | metadata of all GeoNet GNSS stations, in Gamit/Globk station metadata information text format
+`gnss/sitelogs/station.info.geonet` | metadata of all GeoNet GNSS stations, in GAMIT/GlobK station metadata information text format
 
 Individual station sitelogs naming are formed as:
 
@@ -162,7 +205,7 @@ Individual station sitelogs naming are formed as:
 Following IGS standards, previous sitelogs are also available, but the most recent one always contain all metadata changes.
 
 
-### <a name="gnsstie"></a>Local tie-in survey
+#### <a name="gnsstie"></a>Local tie-in survey
 Local tie-in survey are conducted when GNSS antenna is changed to have an additional control of the offset introduced in the daily ground deformation time series obtained by processing raw GNSS data.
 
 prexix | content
@@ -177,8 +220,8 @@ Data are organized in "folders":
 Each folder contains a README file that provide details of the antenna change, raw and rinex data measured on the tie-in temporary station.
 Temporary tie-in data are named using the first 3 characters of the continuous site, followed by "1".
 
-## <a name="seismoprod"></a>Seismic data products
-Dataset derived by the processing and analysis of raw data recorded by the GeoNet seismic sensors networks. 
+### <a name="seismoprod"></a>Seismic data products
+Dataset derived by the processing and analysis of raw data recorded by the GeoNet seismic sensors networks.
 
 Data are provided in various formats depending on the application and include:
 
@@ -188,7 +231,7 @@ Additional information around these datasets can be found on the [GeoNet website
 
 All Seismic derived data products are available under the bucket and prefix `s3://geonet-open-data/seismic-products/`.
 
-### <a name="seismoprod-strong"></a>Strong Motion data products
+#### <a name="seismoprod-strong"></a>Strong Motion data products
 Data products derived from the GeoNet strong motion network for earthquakes with magnitude 4.0 and above.
 
 Additional information around these datasets can be found on the GeoNet [Strong Motion tool page](https://strongmotion.geonet.org.nz) and [Strong Motion data products page](https://www.geonet.org.nz/data/types/strong_motion).
@@ -211,8 +254,8 @@ For further details on legacy datasets (`volume-products`) please refer to the G
 
 Please use the following Digital Object Identifier https://doi.org/10.21420/X0MD-MV58 when using Strong Motion Data Products.
 
-## <a name="waveform"></a>Digital waveform data
-Raw waveform data recorded by the GeoNet sensor networks. 
+### <a name="waveform"></a>Digital waveform data
+Raw waveform data recorded by the GeoNet sensor networks.
 
 Data are provided in various formats depending on the application and include:
 
@@ -224,7 +267,7 @@ Additional information around these datasets can be found on the [GeoNet website
 All waveform raw datasets are available under the bucket and prefix `s3://geonet-open-data/waveforms/`.
 
 
-### <a name="wave-miniseed"></a>Miniseed waveform data
+#### <a name="wave-miniseed"></a>Miniseed waveform data
 Continuous waveform data recorded by the GeoNet sensor network (seismic, acoustic, tsunami monitoring gauges). Data are provided in miniSEED format.
 
 Sync of miniseed data from the GeoNet archive to the open data bucket is still ongoing.
@@ -250,7 +293,7 @@ Data are organized by date, and objects' prefixes are formed as:
 For additional details on miniSEED data format please refer to the [SEED FDSN reference manual](https://www.fdsn.org/publications/).
 
 
-### <a name="wave-strong"></a>Strong Motion waveform data
+#### <a name="wave-strong"></a>Strong Motion waveform data
 Triggered waveform data recorded by the GeoNet strong motion network. Data are provided in binary format.
 
 Additional information can be found on the GeoNet [Strong Motion Data Products page](https://www.geonet.org.nz/data/types/strong_motion).
@@ -272,12 +315,12 @@ Data are organized by equipment type and date and objects' prefixes are formed a
   - `SITE` is the 3 or 4 characters site code, upper case
   - `SN` is the instrument serial number
   - `ext` is the file extension and format `[evt|csd|xml|csv.gz]`
-  
 
 
-## <a name="tseries"></a>Time Series data
 
-Time series data derived from the GeoNet sensor network. 
+### <a name="tseries"></a>Time Series data
+
+Time series data derived from the GeoNet sensor network.
 
 Data are provided in commonly used text open file format and include:
 
@@ -287,7 +330,7 @@ Additional information around this dataset can be found on the [GeoNet website](
 
 All time series data are available under the bucket and prefix `s3://geonet-open-data/time-series/`.
 
-### <a name="tilde"></a>Tilde Time Series data
+#### <a name="tilde"></a>Tilde Time Series data
 Time series data derived from GeoNet sensor network, repackaged and formatted via the GeoNet Tilde application.
 
 Details on Tilde data name format can be found on the [GeoNet Tilde API website page](https://tilde.geonet.org.nz/).
@@ -305,9 +348,9 @@ prefix | content
 
 The Tilde application was recently released in 2021, so the format of this dataset might change in the future. To allow our users to migrate their downstream procedures, object prefixes will include versioning. 
 
-For this dataset, object prefixes are following an _hive style_ partitioning. 
+For this dataset, object prefixes are following an _hive style_ partitioning.
 
-Data are organized by version, domain, station, time series name, sensor code, time series parameters (method and aspect) and time. 
+Data are organized by version, domain, station, time series name, sensor code, time series parameters (method and aspect) and time.
 
 Objects' prefixes are formed as:
 ```
@@ -318,7 +361,7 @@ time-series/tilde/[v]/domain=[domainkey]/                         \
 ```
 
 where:
- - `v` is the tilde time series archive version number (currently v1)
+ - `v` is the tilde time series archive version number (currently v3)
  - `domainkey` is the domain name, used to describe the type of sensor recording the time series
  - `stationkey` is the station identifier
  - `namekey` is the time series name, used to describe the type of measurement
@@ -334,16 +377,16 @@ Below some examples of possible key values.
 
 key | values
 -- | --
-`v` | v1
+`v` | v3
 `domainkey` | `[coastal/dart/envirosensor]`
 `stationkey` | 3 to 5 alphanumeric characters
-`namekey` | `[water-height/water-heigh-detided/soil-moisture/...]`; currently up to 24 different name keys
-`sensorcodekey` | 2 or 3 digits 
+`namekey` | `[water-height/water-heigh-detided/soil-moisture/...]`; currently up to 28 different name keys
+`sensorcodekey` | 2 or 3 digits
 `methodkey` | `[15m/15s/avg/max/min/raw/snapshot/tot]` currently
 `aspectkey` | `[10-cm/x-axis/at-source/east-vent/...]` or `nil`; currently up to 28 different aspect keys
 `YYYY-MM-DD` | 4 digits year, 2 digits month, 2 digits day of month
-`unit` | `[deg/degC/hPa/m/mm/mps/mV/percent]`
-`errorunit` | `[deg/degC/hPa/m/mm/mps/mV/percent]` 
+`unit` | `[deg/degC/hPa/kPa/m/mm/mps/mV/percent]`
+`errorunit` | `[deg/degC/hPa/kPa/m/mm/mps/mV/percent]`
 
 The values listed above are combined depending on the name of the time series.
 For example, the `water-height` and `soil-moisture` time series, will only have these combinations available:
@@ -353,6 +396,6 @@ name | domain | method | aspect | unit
 water-height | coastal/dart | 15m/15s/raw | nil | m
 soil-moisture | envirosensor | snapshot | 10-cm/20-cm/30-cm/40-cm/50-cm/60-cm/70-cm/80-cm | percent
 
-We are increasing the number of derived time series distributed via Tilde, so the list below will grow in time. 
+We are increasing the number of derived time series distributed via Tilde, so the list below will grow in time.
 
 We recommend to refer to the [Tilde Data Discovery page](https://tilde.geonet.org.nz/ui/data-exploration) for an up-to-date and quick overview of available datasets and possible prefix combinations.
