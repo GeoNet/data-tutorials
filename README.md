@@ -24,7 +24,7 @@ code excerpts and examples that our data users will find helpful, such as Jupyte
 | [Tilde](./Tilde) | Shows how to retrieve data from GeoNet's [Tilde API](https://tilde.geonet.org.nz/v3/api-docs/). These turorails apply to **DART**, **envirosensor**, and **tsunami gauge (down-sampled)** data. Tutorials cover Tilde's data, stats, and data summary APIs.
 
 ## How to Run Tutorials
-The file [**environment.yml**](./environment.yml) ensures that you have the correct Python environment to run the data tutorials. It allows you to install the correct Python packages, and where appropriate package versions. We use this environment when writing and reviewing notebooks. If you use a different environment, tutorials may work, but we cannot guarantee it.
+The file [**environment.yml**](environment.yml) ensures that you have the correct Python environment to run the data tutorials. It allows you to install the correct Python packages, and where appropriate package versions. We use this environment when writing and reviewing notebooks. If you use a different environment, tutorials may work, but we cannot guarantee it.
 
 ### 1. Python environment manager
 We use [miniforge](https://github.com/conda-forge/miniforge) to manage our Python environments. Other environment managers such as [Anaconda](https://www.anaconda.com/) are also suitable. Both support Windows, Mac, and Linux. If you do not yet have a python environment manager, we recommend you install one as you need a specific environment for the notebooks to work correctly.
