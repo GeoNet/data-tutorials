@@ -77,7 +77,7 @@ Tutorials are only available as Jupyter notebooks. If you want to run a notebook
                                                       
 ## Data Blogs
 
-Data blogs are stored in the folder [Data_Blog](https://github.com/GeoNet/data-tutorials/tree/main/Data_Blog). Within this is a
+Data blogs are stored in the folder [Data_Blog](./Data_Blog). Within this is a
 sequentially numbered folder including a simplified version of the blog's subject. For example, the folder *blog_01_val* contains the
 first blog published and the subject was Volcanic Alert Level (VAL) data.
 
