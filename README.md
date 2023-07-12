@@ -2,13 +2,17 @@
 
 The purpose of this repository is to provide a home for several data tutorials written to improve the accesibility of the different GeoNet data sets. This repository is an easy way to access the tutorials, provides versioning and allows the users to suggest changes or improvements.
 
-The files in these folders are mostly [Jupyter notebooks](https://jupyter.org/). They demonstrate some simple ways to retrieve and work with data from different GeoNet services such as: FDSN, FITS, Tilde, etc. Most are written in the Python programming language. Older versions of some notebooks were written in the R programming language. We are no longer supporting these, but the notebooks are still available, although we make no guarantee about their current usability. To access these notebooks, please use this [github commit](https://github.com/GeoNet/data-tutorials/tree/5609561894b924211da975d1794eb00b5fcff99d).
+The tutorials in this repository are mostly [Jupyter notebook](https://jupyter.org/) files. They demonstrate some simple ways to retrieve and work with data from different GeoNet services such as: FDSN, FITS, Tilde, etc. Most are written in the Python programming language. Older versions of some notebooks were written in the R programming language. We are no longer supporting these, but the notebooks are still available, although we make no guarantee about their current usability. To access these notebooks, please use this [github commit](https://github.com/GeoNet/data-tutorials/tree/5609561894b924211da975d1794eb00b5fcff99d).
 
 **All notebooks use Python 3. We do not support Python 2.7.**
 
 Tutorials are reviewed every 3 - 6 months. We confirm that they still run, and make any necessary adjustments so that they remain a valuable, working resource for GeoNet's data users.
 
 Tutorials are organised by data access method, rather than data type. Within the folder for each data access method is a file README.md. This file contains most of the general material about data accessed by that method. This frees up individual notebooks to concentrate on data access and use, and reduces the maintenance required for each notebook. When you are using a particular notebook, it is therefore important that you refer to the README.md file in the same folder as the notebook.
+
+This repository also hosts scripts and codes used for GeoNet's data blogs, when applicable. These are news stories focussed on GeoNet data and how to use
+and understand it. They were first published in June 2022 and are accessible through the [GeoNet News web page](https://www.geonet.org.nz/news). While data blogs are not tutorials, the material often contains
+code excerpts and examples that our data users will find helpful, such as Jupyter notebooks and shell scripts. The material in the repository is that used by the blog's authors to prepare the blog at the time it was written. In contrast to data tutorials, with blogs we make no effort to review and keep up to date Jupyter notebooks, shell scripts, or any other code-like material. Also, we do not provide the environment and software versions that we may have used in preparing blog material. In many cases, the python environement described below may work if you want to run a Jupyter notebook used to generate material for a blog.
 
 ## Summary of Tutorials
 
@@ -71,3 +75,10 @@ To reopen jupyter notebooks when opening a new command prompt, navigate to your 
 ### 4. Running tutorials as standalone scripts
 Tutorials are only available as Jupyter notebooks. If you want to run a notebook as a standalone Python script you can do that. Open the notebook in JupyterLab and export it as an [Executable Script](https://jupyterlab.readthedocs.io/en/stable/user/export.html).
                                                       
+## Data Blogs
+
+Data blogs are stored in the folder [Data_Blog](./Data_Blog). Within this is a
+sequentially numbered folder including a simplified version of the blog's subject. For example, the folder *blog_01_val* contains the
+first blog published and the subject was Volcanic Alert Level (VAL) data.
+
+If you want an up to date list of published blogs, go to the [News section on our web page](https://www.geonet.org.nz/news), filter for Data Blog and then hit the Search button.
