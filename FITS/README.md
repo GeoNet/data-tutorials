@@ -1,13 +1,13 @@
 # FITS #
 
-The files in this folder are Jupyter notebooks written in Python. They demonstrate some simple ways to use [GeoNet's FITS data service](https://fits.geonet.org.nz/api-docs/), typically using the Python [Pandas module](https://pandas.pydata.org/).
+The file in this folder is a Jupyter notebooks written in Python. It demonstrates some simple ways to use [GeoNet's FITS data service](https://fits.geonet.org.nz/api-docs/), typically using the Python [Pandas module](https://pandas.pydata.org/).
 
 They apply to all data types available through FITS:
 - GNSS daily positions
-- manually collected volcano data
-- volcano data logger data (limited cases)
+- volcano data collected by data logger, but not updated to the LRDCP platform (Ruapehu crater lake only)
+- volcano data collected by scanDOAS spectrometer, but not available through Tilde (four Ruapehu sites only)
 
-Other data types are available through other applications.
+Other data types are available through Tilde and other applications.
 
 FITS is the process of being replaced by [Tilde](https://tilde.geonet.org.nz/), and will later be deprecated.
 
@@ -15,7 +15,7 @@ FITS is the process of being replaced by [Tilde](https://tilde.geonet.org.nz/), 
 
 **All notebooks use Python 3. We do not support Python 2.7.**
 
-## Notebooks ##
+## Notebook ##
 
 | Notebook | Description |
 |------|-------------|
