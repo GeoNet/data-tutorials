@@ -9,7 +9,7 @@ A good way to start would be running the following lines which set up a few base
 ```
 #! /bin/bash
 ip=https://tilde.geonet.org.nz
-v=v3
+v=v4
 ```
 
 To access the API documentation the following line can be run:
@@ -55,7 +55,7 @@ Printing the data with a specific time period for NZE:
 
 Printing the number of 15s records for a specific time period for NZE:
 
-`curl "${ip}/${v}/data/dart/NZE/water-height/40/15s/nil/2021-02-10/2021-02-11" |  jq -r '.[] | .data[] | "\(.ts)\t\(.value)"' | wc -l`
+`curl "${ip}/${v}/data/dart/NZE/water-height/40/15s/nil/2021-02-10/2021-02-11" |  jq -r '.[] | .data[] | "\(.ts)\t\(.val)"' | wc -l`
 
 Printing all of the records for a specific time period for NZE:
 
