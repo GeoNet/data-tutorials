@@ -3,9 +3,10 @@
 The files in this folder are Jupyter notebooks written in Python. They demonstrate some simple ways to use [GeoNet's Tilde Time Series API](https://tilde.geonet.org.nz/) using the [Python programming language](https://www.python.org/).
 
 They apply to all data domains available through Tilde:
-- coastal tsunami gauge
-- DART
-- envirosensor
+- [coastal tsunami gauge](#section_tsun)
+- [DART](#section_dart)
+- [envirosensor](#section_envi)
+- [GNSS](#section_gnss)
 
 Other data types are available through other applications.
 
@@ -69,11 +70,11 @@ A markdown file also shows a few examples of how to access the Tilde API using b
 
 The following data domains are available through the Tilde API, and can be interrogated and analysed using the Jupyter notebooks.
 
-### Coastal tsunami gauge network ###
+### Coastal tsunami gauge network ### <a id="section_tsun"></a>
 
 GeoNet operates 18 tsunami gauges on the coast. Tilde contains a 15 second down-sampled verion of the original 1 second sampled data. Data are available as water-height and water-height-detided, which has had the effects of tides removed.
 
-### DART ###
+### DART ### <a id="section_dart"></a>
 
 GeoNet uses the 12 DART stations deployed offshore New Zealand and around the Southwestern Pacific Ocean to monitor ocean height. When a change has been detected of a certain magnitude, the DART will "trigger" and go into a heightened detection mode. The DARTs have two operational reporting modes; standard and event. When in standard reporting mode, the BPR (bottom pressure recorder) and buoy system send four six-hour bundles of 15 minute water height values. When in event reporting mode, BPR data are sampled at 15 second intervals and are sent more frequently. The buoy surface location (latitude and longitude) will also be sent daily.
 
@@ -83,7 +84,16 @@ For more DART information see the GeoNet page: https://www.geonet.org.nz/tsunami
 
 Please use the following Digital Object Identifiers https://doi.org/10.21420/8TCZ-TV02 when using DART data.
 
-### Envirosensor network ###
+### Envirosensor network <a id="section_envi"></a>
 
 GeoNet envirosensor network measure various factors related to volcanic activity, and factors that influence the movement of landslides at a rate of one observation every 10 minutes. These include measuring: fumarole temperature, temperature and height of volcanic lakes and springs, rainfall, soil moisture, and displacement across cracks in landslides. Most of these sites measure 2-3 of these factors. Different aspects can also be selected if there are more than one similar measure at a site, for example there is a south-vent and an east-vent aspect for fumarole temperature at site TO006 at Mt Tongariro, and soil moisture is measured by a single sensor at eight different depths at a site at Fox Glacier.
 
+### GNSS <a id="section_gnss"></a>
+
+GeoNet has a network of two hundreds GNSS stations deployed all around New Zealand to monitor ground deformation. The position of every station is computed on daily basis and provided in the form of time series of diplacement from a reference position in the `north`, `east` and `up` directions in meters.
+
+Tilde provides access to the `displacement` data which has not been corrected for any natural or antropogenic effects.
+
+For more GNSS information see the GeoNet page: https://www.geonet.org.nz/data/types/geodetic.
+
+Please use the follow DOI https://doi.org/10.21420/30F4-1A55?x=y when using GNSS time series data.
