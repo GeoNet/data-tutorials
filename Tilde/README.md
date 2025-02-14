@@ -92,7 +92,7 @@ GeoNet envirosensor network measure various factors related to volcanic activity
 
 GeoNet has a network of two hundreds GNSS stations deployed all around New Zealand to monitor ground deformation. The position of every station is computed on daily basis and provided in the form of time series of diplacement from a reference position in the `north`, `east` and `up` directions in meters.
 
-Tilde provides access to the `displacement` data which has not been corrected for any natural or antropogenic effects.
+Tilde provides access to the `displacement` data which has not been corrected for any natural or anthropogenic effects.
 
 For more GNSS information see the GeoNet page: https://www.geonet.org.nz/data/types/geodetic.
 
