@@ -22,7 +22,6 @@ This repository also hosts scripts and codes used for some GeoNet's data blogs. 
 | ------------- | ------------- |
 | [AWS Open Data](./AWS_Open_Data) | A file README.md describing GeoNet's data available through AWS Open Data |
 | [FDSN](./FDSN) | Demonstrates how to access data through GeoNet's different FDSN web services (Dataselect, Station and Event). These tutorials are applicable to **seismic**, **acoustic-infrasound**, and **tsunami gauge (full sample rate)** data sets. |
-| [FITS](./FITS) | Shows how to retrieve and use data from [FITS](https://fits.geonet.org.nz/api-docs/). FITS is used to access **daily GNSS position data**, and is in the process of being replaced by [Tilde](https://tilde.geonet.org.nz/). |
 | [Tilde](./Tilde) | Shows how to retrieve data from GeoNet's [Tilde API](https://tilde.geonet.org.nz/). These tutorials apply to **DART**, **envirosensor**, **tsunami gauge (down-sampled)**, and **GNSS displacement** data. Tutorials cover Tilde's data, stats, and data summary APIs. Further examples using Tilde are available in the volcano tutorials.|
 
 ### By data type

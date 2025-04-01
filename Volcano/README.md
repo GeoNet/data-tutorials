@@ -14,7 +14,7 @@ When using Tilde, the volcano-specific notebooks only use the Tilde Data Endpoin
 | File | Description |
 |------|-------------|
 | [Envirosensor](./Volcano_data_envirosensor.ipynb) | Demonstrates how to retrieve and graph multiGas data, fumarole and water temperature data, water level data, self potential and ground temperature data, wind data, and rainfall data.|
-| [GNSS](./Volcano_data_gnss.ipynb) | Demonstrates how to retrieve and graph GNSS data. These data are currently delivered by [FITS](https://fits.geonet.org.nz/api-docs/) but will move to Tilde |
+| [GNSS](./Volcano_data_gnss.ipynb) | Demonstrates how to retrieve and graph displacement data obtained for the GNSS sensor network. |
 | [Manually collected](./Volcano_data_manualcollect.ipynb) | Demonstrates how to retrieve and graph water chemistry data, airborne gas emission rate data, soil gas data, lake levelling (Lake Taupō) data, and how to create spreadsheet-like output files for water chemistry data.|
 | [ScanDOAS](./Volcano_data_scandoas.ipynb) | Demonstrates how to retrieve and graph scanDOAS data, including working with data from multiple sensors.|
 | [Data aggregation](./Volcano_data_aggregation.ipynb) | Demonstrates how to use Tilde's data aggregation functions with volcano data.|
