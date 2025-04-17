@@ -27,6 +27,10 @@ In this example, jq is extracting all JSON fields that have info on available st
 
 `curl --silent "${ip}/${v}/dataSummary/dart" | jq -r '.domain[] | .stations[] | .station'`
 
+To extract a list of all available combinations of names and methods for a given domain, in a list separated by a tab:
+
+`curl --silent "${ip}/${v}/dataSummary/envirosensor" | jq -r '"\(.domain[].names[].name)\t\(.domain[].names[].methods[].method)"' | sort -u`
+
 To visualise all metadata available via Tilde for a specific site, you can use the available API endpoint and then reformat the output with jq. This example is for NZE but to substitute for different sites or domains, change the domain name and the "station=NZE" section.
 
 `curl "${ip}/${v}/dataSummary/dart?station=NZE" | jq -r .`
