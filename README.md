@@ -21,6 +21,7 @@ This repository also hosts scripts and codes used for some GeoNet's data blogs. 
 | Data access method | Description   |
 | ------------- | ------------- |
 | [AWS Open Data](./AWS_Open_Data) | A file README.md describing GeoNet's data available through AWS Open Data |
+| [Data repository](./Data_Repo) | Demonstrates how to access data through GeoNet's GitHub data repository. These tutorials are applicable to **dart**, **historic volcanic activity**, **moment tensor**, **soil gas**, and **volcanic alert level** data sets. |
 | [FDSN](./FDSN) | Demonstrates how to access data through GeoNet's different FDSN web services (Dataselect, Station and Event). These tutorials are applicable to **seismic**, **acoustic-infrasound**, and **tsunami gauge (full sample rate)** data sets. |
 | [Tilde](./Tilde) | Shows how to retrieve data from GeoNet's [Tilde API](https://tilde.geonet.org.nz/). These tutorials apply to **DART**, **envirosensor**, **tsunami gauge (down-sampled)**, and **GNSS displacement** data. Tutorials cover Tilde's data, stats, and data summary APIs. Further examples using Tilde are available in the volcano tutorials.|
 

@@ -8,6 +8,7 @@ dependencies:
   - matplotlib[version='>=3.8']
   - pandas[version='>=2.2']
   - geopandas
+  - gdal
   - obspy=[version='>=1.4']  
   - tabulate
   - ipykernel
