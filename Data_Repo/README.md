@@ -10,6 +10,7 @@ The files in this folder are [Jupyter notebooks](https://jupyter.org/) written i
 
 | File | Description |
 |------|-------------|
+| [Aviation colour codes](./data_repo_aviation-colour-codes.ipynb) | Demonstrates how to retrive an aviation colour code file, and graph the data. |
 | [Dart-triggers](./data_repo_dart-triggers.ipynb) | Demonstrates how to retrive the triggers file, select a trigger event, and graph it with the associated waveform data from [Tilde](https://tilde.geonet.org.nz/). |
 | [Historic volcanic activity](./data-repo_historic-volcanic-activity.ipynb) | Demonstrates how to retrieve and graph historic volcanic activity data. Additional examples are available in a [notebook](https://github.com/GeoNet/data-tutorials/tree/main/Data_Blog/blog_05_visualize_eruption_catalogue) used in a related [data blog](https://www.geonet.org.nz/news/2DMtHEzmma5EqfMWmMvhjy). |
 | [Moment tensors](./data-repo_moment-tensors.ipynb) | Demonstrates how to retrieve the moment tensor file, to plot a solution on a map, and to compare moment tensor magnitude, Mw, with magnitudes from the same event available through the [GeoNet FDSN webservice](https://www.geonet.org.nz/data/access/FDSN). |
