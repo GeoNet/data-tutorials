@@ -51,7 +51,7 @@ There will be no error messages, but no output will be written to the terminal. 
 
 ## Data description ##
 ### <a name="camera"></a>Camera images
-Camera images recorded at webcams installed to monitor active New Zealand volcanoes. The dataset also include data from three webcams that documented the Christchurch rebuild from 2011 to 2019.
+Camera images recorded at webcams installed to monitor active New Zealand volcanoes and landslides. The dataset also include data from three webcams that documented the Christchurch rebuild from 2011 to 2019.
 
 Camera data include images in jpg format.
 
@@ -61,12 +61,13 @@ All camera images are available under the bucket and prefix `s3://geonet-open-da
 
 prefix | content
 -- | --
-`camera/building/` | camera images recorded at 10 minutes intervals installed in Christchurch between 2011 and 2019
-`camera/volcano/` | camera images recorded at 10 minutes intervals installed around active volcanoes
+`camera/building/`  | camera images recorded at 10 minutes intervals installed in Christchurch between 2011 and 2019
+`camera/landslide/` | camera images recorded at 10 minutes intervals installed around target active landslides
+`camera/volcano/`   | camera images recorded at 10 minutes intervals installed around active volcanoes
 
 Data are organized by site code and date, and objects' prefixes are formed as:
 
-`camera/[building|volcano]/images/[yyyy]/[SITE]/[SITE].[VC]/[yyyy].[doy]/[yyyy].[doy].[hhmm].[ss].[SITE].[VC].jpg`, where:
+`camera/[building|landslide|volcano]/images/[yyyy]/[SITE]/[SITE].[VC]/[yyyy].[doy]/[yyyy].[doy].[hhmm].[ss].[SITE].[VC].jpg`, where:
   - `yyyy` is year (four digits)
   - `doy` is day of year (three digits)
   - `hhmm` is the hour and minute (four digits)
